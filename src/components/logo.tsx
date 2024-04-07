@@ -13,8 +13,8 @@ export const Logo = () => {
 					Font.className
 				)}
 			>
-				<Image src="/Logo.svg" alt="Logo" height={30} width={30} />
-				<p className="text-lg text-neutral-700 pb-1 font-bold ">Nouriva</p>
+				<Image src="/Logo.svg" alt="Logo" height={50} width={50} />
+				<p className="text-xl text-emerald-600 pb-1 font-bold ">Nouriva</p>
 			</div>
 		</Link>
 	);

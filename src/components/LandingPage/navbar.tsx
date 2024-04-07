@@ -12,7 +12,7 @@ export default function Navbar() {
 	const pathname = usePathname();
 	return (
 		<>
-			<div className="navbar h-24  flex flex-row px-[64px] justify-between py-[27px] items-center">
+			<div className="fixed top-0 w-full h-24  flex flex-row px-[64px] justify-between py-[27px] items-center bg-white/80 ">
 				<Logo />
 				<div
 					className={cn(
@@ -24,19 +24,26 @@ export default function Navbar() {
 				>
 					<div>
 						<Link
-							className={`${pathname === "/" ? "active" : "font-medium "} `}
+							className={`${
+								pathname === "/" ? "font-bold" : ""
+							}  hover:font-bold `}
 							href="/"
 						>
 							<p>Home</p>
 							<div
 								className={`h-0.5 bg-emerald-400 rounded ${
 									pathname === "/" ? "block" : "hidden"
-								}`}
+								} `}
 							></div>
 						</Link>
 					</div>
 					<div>
-						<Link href="/about">
+						<Link
+							href="/about"
+							className={`${
+								pathname === "/about" ? "font-bold" : ""
+							}  hover:font-bold `}
+						>
 							<p>About Us</p>
 							<div
 								className={`h-0.5 bg-emerald-400 rounded ${
@@ -46,7 +53,12 @@ export default function Navbar() {
 						</Link>
 					</div>
 					<div>
-						<Link href="/Feature">
+						<Link
+							href="/feature"
+							className={`${
+								pathname === "/feature" ? "font-bold" : ""
+							}  hover:font-bold `}
+						>
 							<p>Feature</p>
 							<div
 								className={`h-0.5 bg-emerald-400 rounded ${
@@ -56,7 +68,12 @@ export default function Navbar() {
 						</Link>
 					</div>
 					<div>
-						<Link href="/tips">
+						<Link
+							href="/tips"
+							className={`${
+								pathname === "/tips" ? "font-bold" : ""
+							}  hover:font-bold `}
+						>
 							<p>Tips</p>
 							<div
 								className={`h-0.5 bg-emerald-400 rounded ${
