@@ -12,7 +12,7 @@ export default function Navbar() {
 	const pathname = usePathname();
 	return (
 		<>
-			<div className="fixed top-0 w-full h-24  flex flex-row px-[64px] justify-between py-[27px] items-center bg-white/80 ">
+			<div className="fixed top-0 z-50 w-full h-24  flex flex-row px-[64px] justify-between py-[27px] items-center bg-white/80 ">
 				<Logo />
 				<div
 					className={cn(
