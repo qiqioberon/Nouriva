@@ -257,6 +257,204 @@ export default function landingpage() {
 						</div>
 					</div>
 				</div>
+				<div className="h-[700px] w-full overflow-hidden flex flex-col justify-center items-center">
+					<div className="flex flex-col gap-16 justify-center items-center">
+						<Image
+							className="absolute right-0 -z-10 transform scale-x-[-1] pb-[300px]"
+							src="/VectorMlungker.svg"
+							alt="Vectormlungker"
+							height={200}
+							width={100}
+						/>
+						<div className="judul  h-[144px] flex flex-col justify-center items-center">
+							<h1
+								className={cn(
+									"font-bold text-emerald-500 text-6xl",
+									SourceSerif.className
+								)}
+							>
+								Nouriva
+							</h1>
+							<h1 className="text-emerald-500 opacity-10 relative -z-10  -top-20 font-bold text-9xl">
+								NOURIVA
+							</h1>
+						</div>
+						<div className=" w-fit h-16 px-6 py-2.5 bg-stone-50 rounded-3xl shadow justify-center items-center gap-2.5 flex flex-row">
+							<div className="text-zinc-800 text-2xl font-normal font-['Poppins'] leading-10">
+								* Easy Nutrition Tracking
+							</div>
+							<div className="text-zinc-800 text-2xl font-normal font-['Poppins'] leading-10">
+								* Parenting Tips
+							</div>
+							<div className="text-zinc-800 text-2xl font-normal font-['Poppins'] leading-10">
+								* Empowering Knowledge
+							</div>
+						</div>
+						<div className=" flex justify-center">
+							<div className="w-[1008px] h-44 bg-gradient-to-br from-[#FFDD83] to-[#28CC9E] rounded-full overflow-hidden flex justify-center items-center">
+								<div className="flex flex-col w-fit absolute z-40 gap-4 justify-center items-center">
+									<h1
+										className={cn(
+											"font-semibold text-4xl text-white",
+											InterFont.className
+										)}
+									>
+										What are you waiting for?
+									</h1>
+									<Button className="rounded-3xl w-[118px]">Try Now!</Button>
+								</div>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 1440 320"
+									className="relative z-10 w-full"
+								>
+									<path
+										fill="#DCEDC8"
+										className="opacity-10"
+										fill-opacity="1"
+										d="M0,128L80,112C160,96,320,64,480,85.3C640,107,800,181,960,181.3C1120,181,1280,107,1360,69.3L1440,32L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+									></path>
+									<path
+										fill="#DCEDC8"
+										className="opacity-20"
+										fill-opacity="1"
+										d="M0,288L34.3,240C68.6,192,137,96,206,48C274.3,0,343,0,411,16C480,32,549,64,617,112C685.7,160,754,224,823,245.3C891.4,267,960,245,1029,218.7C1097.1,192,1166,160,1234,160C1302.9,160,1371,192,1406,208L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
+									></path>
+								</svg>
+							</div>
+							<Image
+								className="absolute left-0 transform z-20 pt-[200px]"
+								src="/VectorMlungker.svg"
+								alt="Vectormlungker"
+								height={100}
+								width={100}
+							/>
+						</div>
+					</div>
+				</div>
+				<div className="h-[300px] w-full overflow-hidden flex justify-end items-end">
+					<div className="w-screen h-[300px] bg-gradient-to-b from-white to-[#5DD29D] absolute "></div>
+					<Image
+						className="relative bottom-0 scale-y-[-1]"
+						src="/Rectanglebottom1.svg"
+						alt="Rectanglebottom"
+						width={1600}
+						height={200}
+					/>
+				</div>
+				<div className="w-screen h-[444px] relative bg-emerald-500 flex flex-col pt-24 gap-14 justify-center items-center">
+					<div className="w-[1095px] left-[173px] top-[90px]   flex flex-row justify-center items-center gap-32">
+						<p
+							className={cn(
+								"text-emerald-50 text-3xl font-medium font-['Poppins']",
+								InterFont.className
+							)}
+						>
+							Home
+						</p>
+						<p
+							className={cn(
+								"text-emerald-50 text-3xl font-medium font-['Poppins']",
+								InterFont.className
+							)}
+						>
+							About Us
+						</p>
+						<p
+							className={cn(
+								"text-emerald-50 text-3xl font-medium font-['Poppins']",
+								InterFont.className
+							)}
+						>
+							Features
+						</p>
+						<p
+							className={cn(
+								"text-emerald-50 text-3xl font-medium font-['Poppins']",
+								InterFont.className
+							)}
+						>
+							FAQ
+						</p>
+						<p
+							className={cn(
+								"text-emerald-50 text-3xl font-medium font-['Poppins']",
+								InterFont.className
+							)}
+						>
+							Join{" "}
+						</p>
+					</div>
+					<div className="w-[874px] left-[283px] top-[184px]  justify-between items-start inline-flex">
+						<div
+							className={cn(
+								"text-emerald-50 text-base font-normal ",
+								InterFont.className
+							)}
+						>
+							Terms & conditions
+						</div>
+						<div
+							className={cn(
+								"text-emerald-50 text-base font-normal ",
+								InterFont.className
+							)}
+						>
+							Privacy policy
+						</div>
+						<div
+							className={cn(
+								"text-emerald-50 text-base font-normal ",
+								InterFont.className
+							)}
+						>
+							Contact
+						</div>
+						<div
+							className={cn(
+								"text-emerald-50 text-base font-normal ",
+								InterFont.className
+							)}
+						>
+							Cookie policy
+						</div>
+						<div
+							className={cn(
+								"text-emerald-50 text-base font-normal ",
+								InterFont.className
+							)}
+						>
+							Support
+						</div>
+					</div>
+
+					<div className="left-[460.45px] top-[275px]  justify-start items-start gap-[40.48px] inline-flex">
+						<div className="w-[52.62px] h-[52.62px] relative">
+							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
+						</div>
+						<div className="w-[52.62px] h-[52.62px] relative">
+							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
+						</div>
+						<div className="w-[52.62px] h-[52.62px] relative">
+							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
+						</div>
+						<div className="w-[52.62px] h-[52.62px] relative">
+							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
+							<div className="w-[28.29px] h-[28.29px] left-[11.93px] top-[10.90px] ">
+								<div className="w-[28.29px] h-[28.29px] left-0 top-0 " />
+							</div>
+						</div>
+						<div className="w-[52.62px] h-[52.62px] relative">
+							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
+						</div>
+						<div className="w-[52.62px] h-[52.62px] relative">
+							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
+						</div>
+					</div>
+					<div className="left-[551px] top-[400px]  text-emerald-50 text-xl font-medium font-['Lato'] leading-normal">
+						© 2023 Nouriva. All Rights Reserved.
+					</div>
+				</div>
 			</div>
 		</>
 	);
