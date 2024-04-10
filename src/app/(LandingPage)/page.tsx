@@ -344,112 +344,136 @@ export default function landingpage() {
 				</div>
 				<div className="w-screen h-[444px] relative bg-emerald-500 flex flex-col pt-24 gap-14 justify-center items-center">
 					<div className="w-[1095px] left-[173px] top-[90px]   flex flex-row justify-center items-center gap-32">
-						<p
+						<Button
 							className={cn(
-								"text-emerald-50 text-3xl font-medium font-['Poppins']",
+								"text-emerald-50 text-3xl font-medium",
 								InterFont.className
 							)}
 						>
-							Home
-						</p>
-						<p
+							<p>Home</p>
+						</Button>
+						<Button
 							className={cn(
-								"text-emerald-50 text-3xl font-medium font-['Poppins']",
+								"text-emerald-50 text-3xl font-medium ",
 								InterFont.className
 							)}
 						>
-							About Us
-						</p>
-						<p
+							<p>About Us</p>
+						</Button>
+						<Button
 							className={cn(
-								"text-emerald-50 text-3xl font-medium font-['Poppins']",
+								"text-emerald-50 text-3xl font-medium ",
 								InterFont.className
 							)}
 						>
-							Features
-						</p>
-						<p
+							<p>Features</p>
+						</Button>
+						<Button
 							className={cn(
-								"text-emerald-50 text-3xl font-medium font-['Poppins']",
+								"text-emerald-50 text-3xl font-medium ",
 								InterFont.className
 							)}
 						>
-							FAQ
-						</p>
-						<p
-							className={cn(
-								"text-emerald-50 text-3xl font-medium font-['Poppins']",
-								InterFont.className
-							)}
-						>
-							Join{" "}
-						</p>
+							<p>FAQ</p>
+						</Button>
+						<Button>
+							<p
+								className={cn(
+									"text-emerald-50 text-3xl font-medium ",
+									InterFont.className
+								)}
+							>
+								Join{" "}
+							</p>
+						</Button>
 					</div>
 					<div className="w-[874px] left-[283px] top-[184px]  justify-between items-start inline-flex">
-						<div
+						<Button
 							className={cn(
 								"text-emerald-50 text-base font-normal ",
 								InterFont.className
 							)}
 						>
-							Terms & conditions
-						</div>
-						<div
-							className={cn(
-								"text-emerald-50 text-base font-normal ",
-								InterFont.className
-							)}
-						>
-							Privacy policy
-						</div>
-						<div
-							className={cn(
-								"text-emerald-50 text-base font-normal ",
-								InterFont.className
-							)}
-						>
-							Contact
-						</div>
-						<div
-							className={cn(
-								"text-emerald-50 text-base font-normal ",
-								InterFont.className
-							)}
-						>
-							Cookie policy
-						</div>
-						<div
-							className={cn(
-								"text-emerald-50 text-base font-normal ",
-								InterFont.className
-							)}
-						>
-							Support
-						</div>
-					</div>
+							<p>Terms & conditions</p>
+						</Button>
 
+						<Button
+							className={cn(
+								"text-emerald-50 text-base font-normal ",
+								InterFont.className
+							)}
+						>
+							<p>Privacy policy</p>
+						</Button>
+						<Button
+							className={cn(
+								"text-emerald-50 text-base font-normal ",
+								InterFont.className
+							)}
+						>
+							<p>Contact</p>
+						</Button>
+						<Button
+							className={cn(
+								"text-emerald-50 text-base font-normal ",
+								InterFont.className
+							)}
+						>
+							<p>Cookie policy</p>
+						</Button>
+						<Button
+							className={cn(
+								"text-emerald-50 text-base font-normal ",
+								InterFont.className
+							)}
+						>
+							<p>Support</p>
+						</Button>
+					</div>
+					<div className="h-1 bg-white w-44  text-white inline-block"></div>
 					<div className="left-[460.45px] top-[275px]  justify-start items-start gap-[40.48px] inline-flex">
-						<div className="w-[52.62px] h-[52.62px] relative">
-							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
-						</div>
-						<div className="w-[52.62px] h-[52.62px] relative">
-							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
-						</div>
-						<div className="w-[52.62px] h-[52.62px] relative">
-							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
-						</div>
-						<div className="w-[52.62px] h-[52.62px] relative">
-							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
-							<div className="w-[28.29px] h-[28.29px] left-[11.93px] top-[10.90px] ">
-								<div className="w-[28.29px] h-[28.29px] left-0 top-0 " />
-							</div>
-						</div>
-						<div className="w-[52.62px] h-[52.62px] relative">
-							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
-						</div>
-						<div className="w-[52.62px] h-[52.62px] relative">
-							<div className="w-[52.62px] h-[52.62px] left-0 top-0  bg-green-50 rounded-full shadow" />
-						</div>
+						<Image
+							className=""
+							src="/facebook.png"
+							alt="facebook"
+							width={52}
+							height={200}
+						/>
+						<Image
+							className=""
+							src="/instagram.png"
+							alt="instagram"
+							width={52}
+							height={200}
+						/>
+						<Image
+							className=""
+							src="/twitter.png"
+							alt="twitter"
+							width={52}
+							height={200}
+						/>
+						<Image
+							className=""
+							src="/pinterest.png"
+							alt="pinterest"
+							width={52}
+							height={200}
+						/>
+						<Image
+							className=""
+							src="/youtube.png"
+							alt="youtube"
+							width={52}
+							height={200}
+						/>
+						<Image
+							className=""
+							src="/gmail.png"
+							alt="gmail"
+							width={52}
+							height={200}
+						/>
 					</div>
 					<div className="left-[551px] top-[400px]  text-emerald-50 text-xl font-medium font-['Lato'] leading-normal">
 						© 2023 Nouriva. All Rights Reserved.
