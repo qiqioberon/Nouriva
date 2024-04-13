@@ -342,7 +342,7 @@ export default function landingpage() {
 						height={200}
 					/>
 				</div>
-				<div className="w-screen h-[444px] relative bg-emerald-500 flex flex-col pt-24 gap-14 justify-center items-center">
+				<div className="w-screen h-fit py-5 relative bg-emerald-500 flex flex-col pt-24 gap-14 justify-center items-center">
 					<div className="w-[1095px] left-[173px] top-[90px]   flex flex-row justify-center items-center gap-32">
 						<Button
 							className={cn(
@@ -430,7 +430,8 @@ export default function landingpage() {
 							<p>Support</p>
 						</Button>
 					</div>
-					<div className="h-1 bg-white w-44  text-white inline-block"></div>
+					<div className="  w-[600px]  h-1 bg-white   "></div>
+
 					<div className="left-[460.45px] top-[275px]  justify-start items-start gap-[40.48px] inline-flex">
 						<Image
 							className=""
