@@ -82,8 +82,8 @@ export default function Register() {
 					</div>
 				</div>
 
-				<div className="w-[720px] h-fit pt-20 flex flex-col justify-start items-center">
-					<div className="w-[458px] bg-white flex flex-col gap-8">
+				<div className="w-[720px] h-fit pt-10 flex flex-col justify-start items-center">
+					<div className="w-[458px] bg-white flex flex-col gap-8 shadow-lg pb-10">
 						<div className="title ">
 							<h1
 								className={cn(
@@ -280,7 +280,7 @@ export default function Register() {
 								Already have account?
 							</p>
 							<a
-								href="/login"
+								href="/Login"
 								className={cn(
 									"font-medium text-sm text-emerald-400 hover:text-emerald-800",
 									InterFont.className
