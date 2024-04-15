@@ -90,10 +90,10 @@ export default function Navbar() {
 					)}
 				>
 					<Button className="w-24 h-8" variant={"default"} asChild>
-						<Link href="/login">Login</Link>
+						<Link href="/Login">Login</Link>
 					</Button>
 					<Button className=" w-24 h-8 " asChild variant={"outline"}>
-						<Link href="/register">Register</Link>
+						<Link href="/Register">Register</Link>
 					</Button>
 				</div>
 			</div>

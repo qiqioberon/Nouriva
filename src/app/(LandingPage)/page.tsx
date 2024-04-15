@@ -52,7 +52,7 @@ export default function landingpage() {
 							width={200}
 						/>
 						<Image
-							className="relative -right-[750px] -z-10"
+							className="relative -right-2/3 -z-10"
 							src="/VectorMlungker.svg"
 							alt="Vectormlungker"
 							height={400}
@@ -115,7 +115,7 @@ export default function landingpage() {
 							</div>
 						</div>
 					</div>
-					<div className="relative -z-10  -top-[500px] mt-10 -ms-8 h-[1350px] w-[1350px] bg-emerald-500 rounded-full" />
+					<div className="relative -z-10  -top-[500px] mt-10 -ms-40 h-[120vw] w-[120vw] bg-emerald-500 rounded-full" />
 				</div>
 				<div className="h-[900px] w-full overflow-hidden bg-emerald-500 flex justify-end items-center px-[50px] py-[86px]">
 					<Image
