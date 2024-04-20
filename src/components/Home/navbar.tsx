@@ -6,10 +6,15 @@ import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
 const InterFont = Inter({ subsets: ["latin"] });
 import { usePathname } from "next/navigation";
-import { Button } from "../ui/button";
-import { User } from "lucide-react";
+
+import { ChevronDown, User } from "lucide-react";
+import { useState } from "react";
 
 export default function Navbar() {
+	const [isRotated, setIsRotated] = useState(false);
+	const handleClick = () => {
+		setIsRotated(!isRotated);
+	};
 	const pathname = usePathname();
 	return (
 		<>
@@ -84,19 +89,46 @@ export default function Navbar() {
 						</Link>
 					</div>
 				</div>
-				
-				<div
-					className={cn(
-						"space-x-4 md:block md:w-auto flex items-center justify-between w-full",
-						InterFont.className
-					)}
-				>
-					<Button className="w-24 h-8" variant={"default"} asChild>
-						<Link href="/Login">Login</Link>
-					</Button>
-					<Button className=" w-24 h-8 " asChild variant={"outline"}>
-						<Link href="/Register">Register</Link>
-					</Button>
+				<div className={isRotated ? "flex flex-col gap-0 pt-[230px]" : ""}>
+					<div
+						className={cn(
+							"flex flex-row gap-2 justify-center items-center",
+							InterFont.className
+						)}
+					>
+						<User size={24} color="#1C9170" />
+						<p className="text-emerald-600 text-xl font-normal">
+							Nouriva Aviruon
+						</p>
+						<ChevronDown
+							size={24}
+							color="#1C9170"
+							className={cn(
+								isRotated ? "rotate-180" : "",
+								"transition-all duration-100"
+							)}
+							onClick={handleClick}
+						/>
+					</div>
+					<div
+						className={cn(
+							isRotated ? "flex flex-col gap-2 py-6 px-2 " : "hidden",
+							InterFont.className
+						)}
+					>
+						<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200">
+							<p>Account</p>
+						</div>
+						<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200">
+							<p>Account</p>
+						</div>
+						<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200">
+							<p>Account</p>
+						</div>
+						<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200">
+							<p>Account</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</>
