@@ -158,7 +158,6 @@ export default function AccountParent() {
 						<div className="self-stretch justify-center items-center gap-2.5 flex flex-row">
 							<InfoIcon
 								strokeWidth={2}
-								onClick={togglePasswordVisibility}
 								className="h-5 w-5 text-gray-500 cursor-pointer"
 							/>
 							<p className="grow shrink basis-0 self-stretch text-neutral-800 text-base font-bold  leading-none">
