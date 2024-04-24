@@ -7,7 +7,7 @@ import { Inter } from "next/font/google";
 const InterFont = Inter({ subsets: ["latin"] });
 import { usePathname } from "next/navigation";
 
-import { ChevronDown, User } from "lucide-react";
+import { ChevronDown, LogOut, User } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -31,65 +31,65 @@ export default function Navbar() {
 					<div>
 						<Link
 							className={`${
-								pathname === "/" ? "font-bold" : ""
+								pathname === "/FindReportMonitor" ? "font-bold" : ""
 							}  hover:font-bold `}
-							href="/"
+							href="/FindReportMonitor"
 						>
-							<p>Home</p>
+							<p>Nutrition Monitor</p>
 							<div
 								className={`h-0.5 bg-emerald-400 rounded ${
-									pathname === "/" ? "block" : "hidden"
+									pathname === "/FindReportMonitor" ? "block" : "hidden"
 								} `}
 							></div>
 						</Link>
 					</div>
 					<div>
 						<Link
-							href="/about"
+							href="/NutritionReport"
 							className={`${
-								pathname === "/about" ? "font-bold" : ""
+								pathname === "/NutritionReport" ? "font-bold" : ""
 							}  hover:font-bold `}
 						>
-							<p>About Us</p>
+							<p>Nutrition Report</p>
 							<div
 								className={`h-0.5 bg-emerald-400 rounded ${
-									pathname === "/about" ? "block" : "hidden"
+									pathname === "/NutritionReport" ? "block" : "hidden"
 								}`}
 							></div>
 						</Link>
 					</div>
 					<div>
 						<Link
-							href="/feature"
+							href="/AccountChildren"
 							className={`${
-								pathname === "/feature" ? "font-bold" : ""
+								pathname === "/AccountChildren" ? "font-bold" : ""
 							}  hover:font-bold `}
 						>
-							<p>Feature</p>
+							<p>Account Children</p>
 							<div
 								className={`h-0.5 bg-emerald-400 rounded ${
-									pathname === "/feature" ? "block" : "hidden"
+									pathname === "/AccountChildren" ? "block" : "hidden"
 								}`}
 							></div>
 						</Link>
 					</div>
 					<div>
 						<Link
-							href="/tips"
+							href="/AccountParent"
 							className={`${
-								pathname === "/tips" ? "font-bold" : ""
+								pathname === "/AccountParent" ? "font-bold" : ""
 							}  hover:font-bold `}
 						>
-							<p>Tips</p>
+							<p>Your Account</p>
 							<div
 								className={`h-0.5 bg-emerald-400 rounded ${
-									pathname === "/tips" ? "block" : "hidden"
+									pathname === "/AccountParent" ? "block" : "hidden"
 								}`}
 							></div>
 						</Link>
 					</div>
 				</div>
-				<div className={isRotated ? "flex flex-col gap-0 pt-[230px]" : ""}>
+				<div className={isRotated ? "flex flex-col gap-0 pt-[87px]" : ""}>
 					<div
 						className={cn(
 							"flex flex-row gap-2 justify-center items-center",
@@ -116,18 +116,12 @@ export default function Navbar() {
 							InterFont.className
 						)}
 					>
-						<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200">
-							<p>Account</p>
-						</div>
-						<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200">
-							<p>Account</p>
-						</div>
-						<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200">
-							<p>Account</p>
-						</div>
-						<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200">
-							<p>Account</p>
-						</div>
+						<Link href="/">
+							<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200 flex flex-row gap-4 items-center ">
+								<LogOut size={25} strokeWidth={1} />
+								<p>Logout</p>
+							</div>
+						</Link>
 					</div>
 				</div>
 			</div>
