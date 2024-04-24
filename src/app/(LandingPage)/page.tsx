@@ -9,6 +9,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 const InterFont = Inter({ subsets: ["latin"] });
 const SourceSerif = Source_Serif_4({
@@ -39,8 +40,9 @@ export default function landingpage() {
 						<Button
 							className="w-36 h-12 font-bold text-emerald-50"
 							style={InterFont.style}
+							asChild
 						>
-							Learn More
+							<Link href="/Login">Learn More</Link>
 						</Button>
 					</div>
 					<div className="flex flex-row">
@@ -141,8 +143,9 @@ export default function landingpage() {
 								"bg-white text-emerald-500 hover:border-2 hover:border-emerald-700 font-semibold",
 								InterFont.className
 							)}
+							asChild
 						>
-							Join Us
+							<Link href="/Register">Join Us</Link>
 						</Button>
 					</div>
 				</div>
@@ -301,7 +304,9 @@ export default function landingpage() {
 									>
 										What are you waiting for?
 									</h1>
-									<Button className="rounded-3xl w-[118px]">Try Now!</Button>
+									<Button className="rounded-3xl w-fit px-8 py-5" asChild>
+										<Link href="/Register">Try Now!</Link>
+									</Button>
 								</div>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
