@@ -31,16 +31,15 @@ export default function FindReport() {
 	const bgImage = "./Logo.svg";
 	return (
 		<>
+			<div
+				className="absolute w-[900px] h-2/3 bg-center bg-contain -z-10 "
+				style={{
+					backgroundImage: `url(${bgImage})`,
+					opacity: 0.1, // Set the desired opacity level
+					backgroundRepeat: "no-repeat",
+				}}
+			/>
 			<div className="container flex flex-col gap-5 justify-center items-center overflow-hidden ">
-				<div className="background  -z-30 opacity-15 absolute xl:w-1/3  flex items-center">
-					<Image
-						src={bgImage}
-						alt="background"
-						width={1000}
-						height={1000}
-						layout="responsive"
-					/>
-				</div>
 				<div className="flex flex-col gap-8 justify-center items-center flex-shrink">
 					<h1
 						className={cn(
@@ -134,10 +133,10 @@ export default function FindReport() {
 				</div>
 			</div>
 			<Image
-				className="absolute bottom-0 rotate-180 -z-20"
+				className="absolute bottom-0  rotate-180 -z-20"
 				src="/Rectanglebottom1.svg"
 				alt="Rectanglebottom"
-				width={1600}
+				width={5000}
 				height={200}
 			/>
 		</>

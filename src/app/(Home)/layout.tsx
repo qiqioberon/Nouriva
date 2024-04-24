@@ -7,7 +7,9 @@ export default function Home({
 		<>
 			<Navbar />
 
-			<div className="pt-24">{children}</div>
+			<div className="pt-24 flex justify-center items-center w-full">
+				{children}
+			</div>
 		</>
 	);
 }
