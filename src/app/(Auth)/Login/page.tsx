@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Eye, EyeOff } from "lucide-react";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 const InterFont = Inter({ subsets: ["latin"] });
@@ -159,22 +160,22 @@ export default function Login() {
 								<a href="#" className=" text-gray-500 cursor-pointer text-end">
 									Forgot Password?
 								</a>
-								<Button>Login</Button>
+								<Button asChild>
+									<Link href="/FindReportMonitor">Login</Link>
+								</Button>
 							</form>
 						</div>
 						<div className="already flex flex-row gap-2 justify-center items-center">
 							<p className={cn("font-medium text-sm", InterFont.className)}>
 								You dont have an account yet?
 							</p>
-							<a
-								href="/Register"
-								className={cn(
-									"font-medium text-sm text-emerald-400 hover:text-emerald-800",
-									InterFont.className
-								)}
+							<Button
+								className={cn("font-medium text-sm ", InterFont.className)}
+								variant="outline"
+								asChild
 							>
-								Register
-							</a>
+								<Link href="/Register">Register</Link>
+							</Button>
 						</div>
 					</div>
 				</div>
