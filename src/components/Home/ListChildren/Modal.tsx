@@ -20,6 +20,7 @@ export default function ModalAddChildren({
 	const { register, handleSubmit, formState } = methods;
 	const onSubmit = (data: RegisterChildren) => {
 		console.log(data);
+
 		setShowModal(false);
 	};
 	return (
