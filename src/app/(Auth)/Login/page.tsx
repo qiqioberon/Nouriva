@@ -47,6 +47,7 @@ export default function Login() {
 		console.log(response);
 		console.log(response?.status);
 		const { accessToken } = response.data.data;
+		localStorage.setItem("accessToken", accessToken);
 		console.log(accessToken);
 
 		router.push("/FindReportMonitor");

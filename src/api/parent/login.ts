@@ -24,7 +24,7 @@ export default function LoginUser() {
     if (response && response.data && response.data.data.accessToken) {
         const { accessToken } = response.data.data;
         useUserStore.getState().setAccessToken(accessToken);
-        localStorage.setItem("accessToken", accessToken);
+
         console.log(useUserStore.getState().accessToken);
     }
 
