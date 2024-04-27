@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Eye, EyeOff } from "lucide-react";
 import { Inter, Source_Serif_4 } from "next/font/google";
@@ -7,6 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import SignUpUser from "@/api/parent/register";
+import { Register as RegType } from "@/types/RegisterType";
 const InterFont = Inter({ subsets: ["latin"] });
 const SourceSerif = Source_Serif_4({
 	subsets: ["latin"],
@@ -19,10 +23,11 @@ interface RegisterUserForm {
 	phone: string;
 	password: string;
 	confirmPassword: string;
-	reminder: boolean;
+	reminder: string;
 }
 
 export default function Register() {
+	const router = useRouter();
 	const [showPassword, setShowPassword] = useState(false);
 	const [showPasswordrep, setShowPasswordrep] = useState(false);
 
@@ -35,10 +40,29 @@ export default function Register() {
 		handleSubmit,
 		formState: { errors },
 	} = methods;
-
-	const onSubmit = (data: any) => {
+	const { mutateSignUp, responseSignUp, isSuccess } = SignUpUser();
+	const onSubmit = async (data: RegisterUserForm) => {
 		console.log(data);
+		if (data.password !== data.confirmPassword) {
+			toast.error("Password and Confirm Password must be same");
+		} else {
+			const SignUpData: RegType = {
+				email: data.email,
+				name: data.name,
+				phoneNumber: data.phone,
+				reminder: data.reminder === "true" ? true : false,
+				password: data.password,
+			};
+			await mutateSignUp(SignUpData);
+			console.log(SignUpData);
+		}
 	};
+
+	if (isSuccess && responseSignUp) {
+		console.log(responseSignUp);
+		router.push("/Login");
+	}
+
 	return (
 		<>
 			<div className="flex flex-row gap-0 w-screen">
@@ -51,7 +75,7 @@ export default function Register() {
 									InterFont.className
 								)}
 							>
-								Elevate Your Parenting Experience with{" "}
+								Elevate Your Parenting Experience with x
 							</span>
 							<span
 								className={cn(
@@ -96,10 +120,7 @@ export default function Register() {
 							</h1>
 						</div>
 						<div className="isi  px-20 py-10">
-							<form
-								onSubmit={handleSubmit(onSubmit)}
-								className="flex flex-col gap-6"
-							>
+							<form className="flex flex-col gap-6">
 								<div className="flex flex-col gap-2">
 									<label
 										htmlFor="email"
@@ -245,6 +266,7 @@ export default function Register() {
 											<input
 												type="radio"
 												id="reminder"
+												value="true"
 												{...register("reminder")}
 											/>{" "}
 											<label
@@ -260,6 +282,7 @@ export default function Register() {
 											<input
 												type="radio"
 												id="reminder"
+												value="false"
 												{...register("reminder")}
 											/>{" "}
 											<label
@@ -273,9 +296,7 @@ export default function Register() {
 										</div>
 									</div>
 								</div>
-								<Button>
-									<Link href="/Login">Register</Link>
-								</Button>
+								<Button onClick={handleSubmit(onSubmit)}>Register</Button>
 							</form>
 						</div>
 						<div className="already flex flex-row gap-2 justify-center items-center">
