@@ -134,7 +134,7 @@ export default function Navbar() {
 						)}
 					>
 						<div
-							className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200 flex flex-row gap-4 items-center "
+							className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200 flex flex-row gap-4 items-center bg-white "
 							onClick={handleLogout}
 						>
 							<LogOut size={25} strokeWidth={1} />
