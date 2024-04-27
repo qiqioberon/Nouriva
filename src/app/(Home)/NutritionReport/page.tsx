@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Inter, Source_Serif_4 } from "next/font/google";
-import Image from "next/image";
 import { PieChart } from "@/components/Home/Piechart/piechar";
 import { ChevronRight, InfoIcon } from "lucide-react";
 const InterFont = Inter({ subsets: ["latin"] });
