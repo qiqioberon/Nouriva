@@ -46,7 +46,7 @@ export default function Login() {
 	if (isSuccess && response && response.status === 200) {
 		console.log(response);
 		console.log(response?.status);
-		const { accessToken } = response.data;
+		const { accessToken } = response.data.data;
 		console.log(accessToken);
 
 		router.push("/FindReportMonitor");

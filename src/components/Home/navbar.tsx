@@ -4,17 +4,37 @@ import Link from "next/link";
 import { Logo } from "../logo";
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
+import getUser from "@/api/parent/getuser";
 const InterFont = Inter({ subsets: ["latin"] });
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { ChevronDown, LogOut, User } from "lucide-react";
 import { useState } from "react";
+import useUserStore from "@/store/userstore";
 
 export default function Navbar() {
+	const Router = useRouter();
 	const [isRotated, setIsRotated] = useState(false);
+	const { getUserData } = getUser();
 	const handleClick = () => {
 		setIsRotated(!isRotated);
 	};
+
+	console.log(getUserData);
+	const handleLogout = () => {
+		localStorage.removeItem("accessToken");
+		useUserStore.getState().setAccessToken("");
+		Router.push("/");
+	};
+
+	console.log(useUserStore.getState().accessToken);
+	if (
+		localStorage.getItem("accessToken") === null &&
+		useUserStore.getState().accessToken === null
+	) {
+		Router.push("/");
+	}
+
 	const pathname = usePathname();
 	return (
 		<>
@@ -84,7 +104,9 @@ export default function Navbar() {
 					>
 						<User size={24} color="#1C9170" />
 						<p className="text-emerald-600 text-xl font-normal">
-							Nouriva Aviruon
+							{getUserData?.data.data.name
+								? getUserData?.data.data.name
+								: "loading.."}
 						</p>
 						<ChevronDown
 							size={24}
@@ -102,12 +124,13 @@ export default function Navbar() {
 							InterFont.className
 						)}
 					>
-						<Link href="/">
-							<div className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200 flex flex-row gap-4 items-center ">
-								<LogOut size={25} strokeWidth={1} />
-								<p>Logout</p>
-							</div>
-						</Link>
+						<div
+							className="w-full px-4 py-2 rounded-lg hover:bg-emerald-200 flex flex-row gap-4 items-center "
+							onClick={handleLogout}
+						>
+							<LogOut size={25} strokeWidth={1} />
+							<p>Logout</p>
+						</div>
 					</div>
 				</div>
 			</div>

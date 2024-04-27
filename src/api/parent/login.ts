@@ -1,3 +1,4 @@
+
 import useUserStore from '@/store/userstore';
 import { useMutation, MutationFunction } from "@tanstack/react-query";
 import main from "../main";
@@ -20,8 +21,8 @@ export default function LoginUser() {
         onSuccess: () => toast.success("Sukses Login"),
     });
 
-    if (response && response.data && response.data.accessToken) {
-        const { accessToken } = response.data;
+    if (response && response.data && response.data.data.accessToken) {
+        const { accessToken } = response.data.data;
         useUserStore.getState().setAccessToken(accessToken);
         localStorage.setItem("accessToken", accessToken);
         console.log(useUserStore.getState().accessToken);
