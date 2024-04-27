@@ -43,32 +43,18 @@ export default function Navbar() {
 							></div>
 						</Link>
 					</div>
+
 					<div>
 						<Link
-							href="/NutritionReport"
+							href="/ListChildren"
 							className={`${
-								pathname === "/NutritionReport" ? "font-bold" : ""
+								pathname === "/ListChildren" ? "font-bold" : ""
 							}  hover:font-bold `}
 						>
-							<p>Nutrition Report</p>
+							<p>List Children</p>
 							<div
 								className={`h-0.5 bg-emerald-400 rounded ${
-									pathname === "/NutritionReport" ? "block" : "hidden"
-								}`}
-							></div>
-						</Link>
-					</div>
-					<div>
-						<Link
-							href="/AccountChildren"
-							className={`${
-								pathname === "/AccountChildren" ? "font-bold" : ""
-							}  hover:font-bold `}
-						>
-							<p>Account Children</p>
-							<div
-								className={`h-0.5 bg-emerald-400 rounded ${
-									pathname === "/AccountChildren" ? "block" : "hidden"
+									pathname === "/ListChildren" ? "block" : "hidden"
 								}`}
 							></div>
 						</Link>
