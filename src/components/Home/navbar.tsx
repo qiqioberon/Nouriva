@@ -28,6 +28,7 @@ export default function Navbar() {
 	};
 
 	console.log(useUserStore.getState().accessToken);
+	console.log(localStorage.getItem("accessToken"));
 	if (
 		localStorage.getItem("accessToken") === null &&
 		useUserStore.getState().accessToken === null
