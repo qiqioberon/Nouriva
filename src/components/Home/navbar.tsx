@@ -22,13 +22,15 @@ export default function Navbar() {
 
 	console.log(getUserData);
 	const handleLogout = () => {
-		localStorage.removeItem("accessToken");
+		if (typeof window !== "undefined") {
+			localStorage.removeItem("accessToken");
+		}
 		useUserStore.getState().setAccessToken("");
 		Router.push("/");
 	};
 
-	console.log(useUserStore.getState().accessToken);
-	console.log(localStorage.getItem("accessToken"));
+	// console.log(useUserStore.getState().accessToken);
+	// console.log(localStorage.getItem("accessToken"));
 	if (
 		localStorage.getItem("accessToken") === null &&
 		useUserStore.getState().accessToken === null
