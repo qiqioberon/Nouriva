@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Eye, EyeOff, Info, InfoIcon, Plus } from "lucide-react";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 const InterFont = Inter({ subsets: ["latin"] });
@@ -38,8 +39,12 @@ export default function ListChildren() {
 								<p>Age : 2 Years Old</p>
 							</div>
 							<div className="flex flex-row justify-between">
-								<Button variant="default">Profile</Button>
-								<Button variant="outline">Nutrition Report</Button>
+								<Button variant="default" asChild>
+									<Link href="/AccountChildren">Profile</Link>
+								</Button>
+								<Button variant="outline" asChild>
+									<Link href="NutritionReport"> Nutrition Report</Link>
+								</Button>
 							</div>
 						</div>
 					</div>
@@ -55,8 +60,12 @@ export default function ListChildren() {
 								<p>Age : 2 Years Old</p>
 							</div>
 							<div className="flex flex-row justify-between">
-								<Button variant="default">Profile</Button>
-								<Button variant="outline">Nutrition Report</Button>
+								<Button variant="default" asChild>
+									<Link href="/AccountChildren">Profile</Link>
+								</Button>
+								<Button variant="outline" asChild>
+									<Link href="NutritionReport"> Nutrition Report </Link>
+								</Button>
 							</div>
 						</div>
 					</div>

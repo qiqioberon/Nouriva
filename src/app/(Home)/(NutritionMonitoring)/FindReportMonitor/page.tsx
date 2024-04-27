@@ -6,6 +6,8 @@ import { Inter, Source_Serif_4 } from "next/font/google";
 import Image from "next/image";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+
 const InterFont = Inter({ subsets: ["latin"] });
 const SourceSerif = Source_Serif_4({
 	subsets: ["latin"],
@@ -15,9 +17,12 @@ interface ChildrenData {
 	Date: Date;
 	Foodtype: string;
 	FoodName: string;
+	Anak: string;
 }
 
 export default function FindReport() {
+	const router = useRouter();
+
 	const methods = useForm<ChildrenData>();
 	const {
 		register,
@@ -27,6 +32,7 @@ export default function FindReport() {
 
 	const onSubmit = (data: any) => {
 		console.log(data);
+		router.push("/ResultReportMonitor");
 	};
 	const bgImage = "./Logo.svg";
 	return (
@@ -118,6 +124,28 @@ export default function FindReport() {
 						>
 							<option value="" disabled selected>
 								Select Food Name
+							</option>
+							<option value="option1">Option 1</option>
+							<option value="option2">Option 2</option>
+							<option value="option3">Option 3</option>
+						</select>
+					</div>
+					<div className="flex flex-col gap-3">
+						<label
+							htmlFor="Anak"
+							className={cn("font-bold text-sm ", InterFont.className)}
+						>
+							Nama Anak:
+						</label>
+						<select
+							className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+							id="Anak"
+							{...register("Anak", {
+								required: "Anak number is required",
+							})}
+						>
+							<option value="" disabled selected>
+								Select Nama Anak
 							</option>
 							<option value="option1">Option 1</option>
 							<option value="option2">Option 2</option>
