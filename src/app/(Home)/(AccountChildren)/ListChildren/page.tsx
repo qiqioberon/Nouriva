@@ -1,12 +1,12 @@
 "use client";
+import ModalAddChildren from "@/components/Home/ListChildren/Modal";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Eye, EyeOff, Info, InfoIcon, Plus } from "lucide-react";
 import { Inter, Source_Serif_4 } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+
 const InterFont = Inter({ subsets: ["latin"] });
 const SourceSerif = Source_Serif_4({
 	subsets: ["latin"],
@@ -14,9 +14,12 @@ const SourceSerif = Source_Serif_4({
 });
 
 export default function ListChildren() {
+	const [showModal, setShowModal] = useState(false);
+
 	const bgImage = "./Logo.svg";
 	return (
 		<>
+			{showModal && <ModalAddChildren setShowModal={setShowModal} />}
 			<div
 				className="absolute w-full h-full bg-center bg-contain -z-10 "
 				style={{
@@ -70,7 +73,10 @@ export default function ListChildren() {
 						</div>
 					</div>
 					<div className="flex flex-row gap-0 pt-14 h-full">
-						<div className="flex flex-col gap-6 border border-slate-500 w-full h-full p-6 justify-center items-center hover:bg-emerald-100">
+						<div
+							className="flex flex-col gap-6 border border-slate-500 w-full h-full p-6 justify-center items-center hover:bg-emerald-100 cursor-pointer"
+							onClick={() => setShowModal(!showModal)}
+						>
 							<Plus size={32} />
 							<p>Add Children</p>
 						</div>
