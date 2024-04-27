@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Eye, EyeOff } from "lucide-react";
@@ -7,37 +8,49 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { LoginUser as LoginType } from "@/types/LoginUserType";
+import LoginUser from "@/api/parent/login";
+
 const InterFont = Inter({ subsets: ["latin"] });
 const SourceSerif = Source_Serif_4({
 	subsets: ["latin"],
 	style: ["italic", "normal"],
 });
 
-interface LoginUserForm {
-	email: string;
-	name: string;
-	phone: string;
-	password: string;
-	confirmPassword: string;
-	reminder: boolean;
-}
-
 export default function Login() {
+	const router = useRouter();
 	const [showPassword, setShowPassword] = useState(false);
 
 	const togglePasswordVisibility = () => {
 		setShowPassword(!showPassword);
 	};
-	const methods = useForm<LoginUserForm>();
+	const { mutateUseLoginUser, response, isSuccess } = LoginUser();
+	const methods = useForm<LoginType>();
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = methods;
 
-	const onSubmit = (data: any) => {
-		console.log(data);
+	const onSubmit = async (data: any) => {
+		try {
+			console.log(data);
+			console.log(isSuccess);
+
+			await mutateUseLoginUser(data);
+		} catch (error) {
+			console.error("Error:", error);
+		}
 	};
+
+	if (isSuccess && response && response.status === 200) {
+		console.log(response);
+		console.log(response?.status);
+		const { accessToken } = response.data;
+		console.log(accessToken);
+
+		router.push("/FindReportMonitor");
+	}
 	return (
 		<>
 			<div className="flex flex-row gap-0 w-screen">
@@ -95,10 +108,7 @@ export default function Login() {
 							</h1>
 						</div>
 						<div className="isi  px-20 py-10">
-							<form
-								onSubmit={handleSubmit(onSubmit)}
-								className="flex flex-col gap-6"
-							>
+							<form className="flex flex-col gap-6">
 								<div className="flex flex-col gap-2">
 									<label
 										htmlFor="email"
@@ -160,9 +170,7 @@ export default function Login() {
 								<a href="#" className=" text-gray-500 cursor-pointer text-end">
 									Forgot Password?
 								</a>
-								<Button asChild>
-									<Link href="/FindReportMonitor">Login</Link>
-								</Button>
+								<Button onClick={handleSubmit(onSubmit)}>Login</Button>
 							</form>
 						</div>
 						<div className="already flex flex-row gap-2 justify-center items-center">
