@@ -31,11 +31,17 @@ export default function Navbar() {
 
 	// console.log(useUserStore.getState().accessToken);
 	// console.log(localStorage.getItem("accessToken"));
-	if (
-		localStorage.getItem("accessToken") === null &&
-		useUserStore.getState().accessToken === null
-	) {
-		Router.push("/");
+	if (typeof window !== "undefined") {
+		if (
+			localStorage.getItem("accessToken") === null &&
+			useUserStore.getState().accessToken === null
+		) {
+			Router.push("/");
+		}
+	} else {
+		if (useUserStore.getState().accessToken === null) {
+			Router.push("/");
+		}
 	}
 
 	const pathname = usePathname();
